@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="2" maxValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="bHv-iO-kaq">
+                                <color key="minimumTrackTintColor" cyan="0.60288757969999995" magenta="0.001457768143" yellow="0.1785260313" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                <color key="maximumTrackTintColor" red="0.41464830139999997" green="0.36917003869999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="splitAmtChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="COM-ya-CTh"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LT-dD-nF3">
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="calculateSplitAmt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kWZ-8Y-gGa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89z-2J-UnG">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jry-dS-fhC">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="QNd-Vh-uBM"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.91929029280626018" green="1" blue="0.99307887154133889" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="8LT-dD-nF3" firstAttribute="centerX" secondItem="bHv-iO-kaq" secondAttribute="centerX" id="4RU-l1-4CC"/>
+                            <constraint firstItem="bHv-iO-kaq" firstAttribute="width" secondItem="Jry-dS-fhC" secondAttribute="width" id="7p3-aS-EXh"/>
+                            <constraint firstItem="89z-2J-UnG" firstAttribute="top" secondItem="8LT-dD-nF3" secondAttribute="bottom" constant="49" id="CwG-tP-xme"/>
+                            <constraint firstItem="bHv-iO-kaq" firstAttribute="centerX" secondItem="Jry-dS-fhC" secondAttribute="centerX" id="Ftn-Va-zjE"/>
+                            <constraint firstItem="Jry-dS-fhC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="ZSR-z9-q5v"/>
+                            <constraint firstItem="Jry-dS-fhC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eFS-pG-jYV"/>
+                            <constraint firstItem="Jry-dS-fhC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="s9E-6T-myQ"/>
+                            <constraint firstItem="8LT-dD-nF3" firstAttribute="top" secondItem="bHv-iO-kaq" secondAttribute="bottom" constant="50" id="wGJ-s1-jpd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jry-dS-fhC" secondAttribute="trailing" constant="30" id="wTX-ue-vXv"/>
+                            <constraint firstItem="bHv-iO-kaq" firstAttribute="top" secondItem="Jry-dS-fhC" secondAttribute="bottom" constant="37" id="xfa-za-gvd"/>
+                            <constraint firstItem="89z-2J-UnG" firstAttribute="centerX" secondItem="8LT-dD-nF3" secondAttribute="centerX" id="xyc-JF-Axm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calculate" destination="8LT-dD-nF3" id="MxB-aJ-8S1"/>
+                        <outlet property="displayAmt" destination="89z-2J-UnG" id="xel-zR-bsr"/>
+                        <outlet property="inputBillAmt" destination="Jry-dS-fhC" id="RTv-22-5Yw"/>
+                        <outlet property="slideBillAmt" destination="bHv-iO-kaq" id="InH-eW-3rI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+</document>
